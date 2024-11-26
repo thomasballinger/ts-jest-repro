@@ -12,20 +12,11 @@
   "type": "module",
   "exports": {
     "./foo": {
-      "require": {
-        "custom-condition": {
-          "types": "./dist/custom-types/foo/index.d.ts"
-        },
-        "types": "./dist/types/foo/index.d.ts",
-        "require": "./dist/cjs/foo/index.js"
+      "custom-condition": {
+        "types": "./dist/custom-types/foo/index.d.ts"
       },
-      "import": {
-        "custom-condition": {
-          "types": "./dist/custom-types/foo/index.d.ts"
-        },
-        "types": "./dist/types/foo/index.d.ts",
-        "import": "./dist/esm/foo/index.js"
-      }
+      "types": "./dist/types/foo/index.d.ts",
+      "default": "./dist/esm/foo/index.js"
     }
   }
 }
