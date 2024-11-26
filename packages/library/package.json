@@ -1,0 +1,31 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --outDir ./dist/custom-types/ --stripInternal false; tsc --outDir ./dist/types"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    "./foo": {
+      "require": {
+        "custom-condition": {
+          "types": "./dist/custom-types/foo/index.d.ts"
+        },
+        "types": "./dist/types/foo/index.d.ts",
+        "require": "./dist/cjs/foo/index.js"
+      },
+      "import": {
+        "custom-condition": {
+          "types": "./dist/custom-types/foo/index.d.ts"
+        },
+        "types": "./dist/types/foo/index.d.ts",
+        "import": "./dist/esm/foo/index.js"
+      }
+    }
+  }
+}
